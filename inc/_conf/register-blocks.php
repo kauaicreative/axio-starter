@@ -15,11 +15,11 @@
  * Module specific blocks should be registered from the module.
  *
  * @param bool|array $allowed_block_types_all list of block names or true for all
- * @param WP_Post    $post                the current post object
+ * @param WP_Post $post the current post object
  *
  * @return array $allowed_block_types_all list of block names
  */
-add_filter( 'allowed_block_types_all', function( $allowed_block_types_all, $post ) {
+add_filter('allowed_block_types_all', function ($allowed_block_types_all, $post) {
 
   // remove all existing blocks
   $blocks = [];
@@ -33,7 +33,7 @@ add_filter( 'allowed_block_types_all', function( $allowed_block_types_all, $post
   // other blocks added from modules
   return $blocks;
 
-}, 10, 2 );
+}, 10, 2);
 
 /** All blocks */
 add_filter( 'allowed_block_types_all', '__return_true', 100, 2 );
