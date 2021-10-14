@@ -14,9 +14,9 @@
  */
 
 // SD
-define( 'THEME_ABSPATH', __DIR__ );
+define( "THEME_URL", dirname( __DIR__ ) . '/' );
 define( 'THEME_URI', get_stylesheet_directory_uri() );
-define( 'THEME_LOGO', THEME_URI . '/dist/images/logo.svg' );
+const THEME_LOGO = THEME_URI . '/dist/images/logo.svg';
 
 /** Inlcude all files who's directory names and file names do not start with _ */
 foreach ( glob( __DIR__ . "/inc/auto/*.php", GLOB_BRACE ) as $file ) {
@@ -27,7 +27,7 @@ foreach ( glob( __DIR__ . "/inc/auto/*.php", GLOB_BRACE ) as $file ) {
  * Configuration
  */
 require_once 'inc/_conf/register-assets.php';
-require_once 'inc/_conf/register-blocks.php';
+//require_once 'inc/_conf/register-blocks.php';
 require_once 'inc/_conf/register-colors.php';
 require_once 'inc/_conf/register-image-sizes.php';
 require_once 'inc/_conf/register-localization.php';

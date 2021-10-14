@@ -34,6 +34,3 @@ add_filter('allowed_block_types_all', function ($allowed_block_types_all, $post)
   return $blocks;
 
 }, 10, 2);
-
-/** All blocks */
-add_filter( 'allowed_block_types_all', '__return_true', 100, 2 );

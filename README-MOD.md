@@ -1,6 +1,6 @@
 # Axio Starter Custom
 
-Axio Starter  
+Axio Starter
 axio-starter-6.0.0
 
 - https://github.com/generaxion/axio-starter
@@ -12,7 +12,7 @@ axio-starter-6.0.0
 
 ## Clone
 
-Clone my Axio Starter Fork  
+Clone my Axio Starter Fork
 (assuming I can keep mod branch up to date with axio-starter master )
 
 ```bash
@@ -24,7 +24,17 @@ git switch mod
 cd ..
 ```
 
-Create new git https://github.com/new
+Optionally update mod branch from generaxion master branch
+
+```bash
+git remote -v
+git remote add upstream https://github.com/generaxion/axio-starter.git
+git remote -v
+git fetch upstream
+git merge upstream/master master # or phpstorm > git > merge > upstream/master
+```
+
+Optionally create new git https://github.com/new
 
 ```bash
 $sitename = "SITE_NAME"
@@ -45,7 +55,7 @@ git push -u origin main
 Install via bash. Clone from Ubuntu not Windows. Or change the line endings of the setup.sh file to LF (Linux)
 todo: do previous commands via bash?
 ```bash
-bash 
+bash
 sh bin/setup.sh
 sh bin/localizator.sh
 ```
@@ -53,9 +63,9 @@ sh bin/localizator.sh
 Edit `assets/manifest.js`
 ```bash
 npm i
-gulp vars # depreciated 
+gulp vars # depreciated
 gulp fonts
-gulp 
+gulp
 
 git add .;git commit -m "setup"; git push
 ```
@@ -84,7 +94,7 @@ git clone https://github.com/aucor/aucor-core.git
  * Config Aucor Core
  * https://github.com/aucor/aucor-core
  */
- 
+
 /** Admin */
 add_filter( 'aucor_core_admin_gallery', '__return_false' );
 add_filter( 'aucor_core_admin_image_link', '__return_false' );
