@@ -6,6 +6,8 @@
 ----------------------------------------------- */
 
 // basic button styles
+@use "sass:math";
+
 @mixin button($style: '') {
   @include button-reset;
   @include transition;
@@ -274,7 +276,7 @@
 
 // aspect ratio
 @mixin aspect-ratio($width, $height) {
-  padding-bottom: percentage($height / $width);
+  padding-bottom: percentage(math.div($height, $width));
 }
 
 // unified transition for theme
