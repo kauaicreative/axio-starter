@@ -15,9 +15,9 @@
 add_action( 'wp_enqueue_scripts', function() {
 
 	// This is compiled into hw-style SDM
-	wp_dequeue_style( 'wp-block-library' );
-	wp_dequeue_style( 'wp-block-library-theme' );
-	wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS
+	//wp_dequeue_style( 'wp-block-library' );
+	//wp_dequeue_style( 'wp-block-library-theme' );
+	//wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS
 
 	// main css
 	wp_enqueue_style(
@@ -165,13 +165,31 @@ add_action( 'wp_footer', function() {
 function x_favicons() {
 
 	// favicon
-	// echo get_stylesheet_directory_uri() . /dist/favicon/
+	echo '<link rel="icon" type="image/png" href="' . THEME_URI . '/dist/images/favicon.png' . '"/>';
 
 	// fonts
-	//echo '<link href="' . THEME_URI . '/dist/fonts/fonts.css" rel="stylesheet">';
+	echo '<link href="' . THEME_URI . '/dist/fonts/fonts.css" rel="stylesheet">';
 
 }
 
 add_action( 'wp_head', 'x_favicons' );
 add_action( 'admin_head', 'x_favicons' );
 add_action( 'login_head', 'x_favicons' );
+
+
+/**
+ * admin pages <head> SD
+ */
+add_action( 'admin_head', function() {
+	// Clean up dom for users
+	$current_user = wp_get_current_user();
+	if ( $current_user->user_login != 'sunny' ) {
+		?>
+		<style>
+			#wposes-settings-sub-nav {
+				display: none !important;
+			}
+		</style>
+		<?php
+	}
+} );

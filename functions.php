@@ -14,7 +14,7 @@
  */
 
 // SD
-define( "THEME_URL", dirname( __DIR__ ) . '/' );
+define( "THEME_DIR", dirname( __DIR__ ) . '/' );
 define( 'THEME_URI', get_stylesheet_directory_uri() );
 const THEME_LOGO = THEME_URI . '/dist/images/logo.svg';
 

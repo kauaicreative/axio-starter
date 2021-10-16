@@ -1,0 +1,136 @@
+/* Source block style-min.css SDM
+----------------------------------------------- */
+//
+// mixins, vars, etc..
+@import "../../../../node_modules/@wordpress/base-styles/mixins";
+@import "../../../../node_modules/@wordpress/base-styles/breakpoints";
+$break-small: 720px;
+@import "../../../../node_modules/@wordpress/base-styles/variables";
+
+// style src
+
+//@import "../../../../node_modules/@wordpress/block-library/src/style";
+// This tag marks the start of the styles that apply to editing canvas contents and need to be manipulated when we resize the editor.
+#start-resizable-editor-section {
+	display: none;
+}
+
+//@import "../../../../node_modules/@wordpress/block-library/src/audio/style.scss";
+//@import "../../../../node_modules/@wordpress/block-library/src/button/style.scss";
+//@import "../../../../node_modules/@wordpress/block-library/src/buttons/style.scss";
+//@import "../../../../node_modules/@wordpress/block-library/src/calendar/style.scss";
+//@import "../../../../node_modules/@wordpress/block-library/src/categories/style.scss";
+//@import "../../../../node_modules/@wordpress/block-library/src/code/style.scss";
+@import "../../../../node_modules/@wordpress/block-library/src/columns/style.scss";
+.wp-block-columns { // for specificity so !important is not required AMP
+	.wp-block-column {
+		@media (max-width: #{ ($break-small - 1) }) {
+			flex-basis: 100% !important;
+		}
+		@media (min-width: #{ ($break-small) }) and (max-width: #{ ($break-medium - 1) }) {
+			&:not(:only-child) {
+				flex-basis: calc(50% - 1em) !important;
+			}
+		}
+	}
+}
+@import "../../../../node_modules/@wordpress/block-library/src/cover/style.scss";
+@import "../../../../node_modules/@wordpress/block-library/src/embed/style.scss";
+//@import "../../../../node_modules/@wordpress/block-library/src/file/style.scss";
+//@import "../../../../node_modules/@wordpress/block-library/src/gallery/style.scss";
+@import "../../../../node_modules/@wordpress/block-library/src/group/style.scss";
+@import "../../../../node_modules/@wordpress/block-library/src/heading/style.scss";
+@import "../../../../node_modules/@wordpress/block-library/src/image/style.scss";
+//@import "../../../../node_modules/@wordpress/block-library/src/latest-comments/style.scss";
+//@import "../../../../node_modules/@wordpress/block-library/src/latest-posts/style.scss";
+@import "../../../../node_modules/@wordpress/block-library/src/list/style.scss";
+@import "../../../../node_modules/@wordpress/block-library/src/media-text/style.scss";
+//@import "../../../../node_modules/@wordpress/block-library/src/navigation/style.scss";
+//@import "../../../../node_modules/@wordpress/block-library/src/navigation-link/style.scss";
+//@import "../../../../node_modules/@wordpress/block-library/src/page-list/style.scss";
+@import "../../../../node_modules/@wordpress/block-library/src/paragraph/style.scss";
+//@import "../../../../node_modules/@wordpress/block-library/src/post-author/style.scss";
+@import "../../../../node_modules/@wordpress/block-library/src/post-comments-form/style.scss";
+@import "../../../../node_modules/@wordpress/block-library/src/preformatted/style.scss";
+@import "../../../../node_modules/@wordpress/block-library/src/pullquote/style.scss";
+//@import "../../../../node_modules/@wordpress/block-library/src/query-loop/style.scss";
+//@import "../../../../node_modules/@wordpress/block-library/src/query-pagination/style.scss";
+@import "../../../../node_modules/@wordpress/block-library/src/quote/style.scss";
+//@import "../../../../node_modules/@wordpress/block-library/src/rss/style.scss";
+//@import "../../../../node_modules/@wordpress/block-library/src/search/style.scss";
+@import "../../../../node_modules/@wordpress/block-library/src/separator/style.scss";
+@import "../../../../node_modules/@wordpress/block-library/src/site-logo/style.scss";
+//@import "../../../../node_modules/@wordpress/block-library/src/social-links/style.scss";
+@import "../../../../node_modules/@wordpress/block-library/src/spacer/style.scss";
+//@import "../../../../node_modules/@wordpress/block-library/src/tag-cloud/style.scss";
+//@import "../../../../node_modules/@wordpress/block-library/src/table/style.scss";
+@import "../../../../node_modules/@wordpress/block-library/src/text-columns/style.scss";
+//@import "../../../../node_modules/@wordpress/block-library/src/verse/style.scss";
+@import "../../../../node_modules/@wordpress/block-library/src/video/style.scss";
+@import "../../../../node_modules/@wordpress/block-library/src/post-featured-image/style.scss";
+
+//@import "../../../../node_modules/@wordpress/block-library/src/common.scss";
+// Font sizes.
+//.has-small-font-size {
+//  font-size: 0.8125em;
+//}
+//
+//.has-regular-font-size, // Not used now, kept because of backward compatibility.
+//.has-normal-font-size {
+//  font-size: 1em;
+//}
+//
+//.has-medium-font-size {
+//  font-size: 1.25em;
+//}
+//
+//.has-large-font-size {
+//  font-size: 2.25em;
+//}
+//
+//.has-larger-font-size, // Not used now, kept because of backward compatibility.
+//.has-huge-font-size {
+//  font-size: 2.625em;
+//}
+
+// Text alignments.
+.has-text-align-center {
+	text-align: center;
+}
+
+.has-text-align-left {
+	/*rtl:ignore*/
+	text-align: left;
+}
+
+.has-text-align-right {
+	/*rtl:ignore*/
+	text-align: right;
+}
+
+// This tag marks the end of the styles that apply to editing canvas contents and need to be manipulated when we resize the editor.
+#end-resizable-editor-section {
+	display: none;
+}
+
+// Block alignments.
+.aligncenter {
+	clear: both;
+}
+
+// Justification.
+.items-justified-left {
+	justify-content: flex-start;
+}
+
+.items-justified-center {
+	justify-content: center;
+}
+
+.items-justified-right {
+	justify-content: flex-end;
+}
+
+.items-justified-space-between {
+	justify-content: space-between;
+}
