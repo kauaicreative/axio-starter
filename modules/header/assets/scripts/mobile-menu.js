@@ -43,6 +43,11 @@ var component_mobile_menu = function(args) {
     close_menu();
   });
 
+	// hide menu on menu click SDM
+	document.querySelector('.mobile-menu__nav').addEventListener("click", function() {
+		dialog.hide();
+	});
+
 
   // toggle click
   var handle_toggle = function(e) {
